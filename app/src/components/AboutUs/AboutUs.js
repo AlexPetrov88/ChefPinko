@@ -1,10 +1,9 @@
 import styles from './AboutUs.module.css';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { RecipeContext } from '../../contexts/RecipeContext';
 
-export const AboutUs = ({
-    recipes,
-}) => {
-
+export const AboutUs = () => {
+    const { recipes } = useContext(RecipeContext);
     return(
 <>
     <div className={styles["title-disc"]}>

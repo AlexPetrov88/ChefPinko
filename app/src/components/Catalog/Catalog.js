@@ -3,31 +3,32 @@ import { CatalogItem } from './CatalogItem/CatalogItem';
 
 import styles from './Catalog.module.css';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { RecipeContext } from '../../contexts/RecipeContext';
 
-export const Catalog = ({
-    recipes,
-}) => {
+export const Catalog = () => {
+    const { recipes } = useContext(RecipeContext);
+
     return(
-            <section className={styles["recipes"]}>
+        <section className={styles["recipes"]}>
 
-                <form id={styles["search"]} >
-                    <div className={styles["searchContainer"]}>
-                        <label htmlFor="leg-title">Recipes:</label>
-                        <i className="fas fa-search"></i>
-                        <input type="search" id="searchRecipe" name="search" placeholder="Search for food recipes" />
-                        <Link to={`/createPage`}className="link"><button className="btn">CreateNewRecipe</button></Link>
-                    </div>
-                </form>
-                
-                <div className={styles["recipeContainer"]}>
-                    
-                    {recipes.map(r => <CatalogItem key={r._id} {...r}/>)}
-
-                    {recipes.length === 0 && (<h3 className={styles["nostyles[-articles"]}>No articles yet</h3>)}
-
+            <form id={styles["search"]} >
+                <div className={styles["searchContainer"]}>
+                    <label htmlFor="leg-title">Recipes:</label>
+                    <i className="fas fa-search"></i>
+                    <input type="search" id="searchRecipe" name="search" placeholder="Search for food recipes" />
+                    <Link to={`/createPage`}className="link"><button className="btn">CreateNewRecipe</button></Link>
                 </div>
-            </section>
+            </form>
+            
+            <div className={styles["recipeContainer"]}>
+                
+                {recipes.map(r => <CatalogItem key={r._id} {...r}/>)}
 
+                {recipes.length === 0 && (<h3 className={styles["nostyles[-articles"]}>No articles yet</h3>)}
+
+            </div>
+        </section>
     );
 }
 

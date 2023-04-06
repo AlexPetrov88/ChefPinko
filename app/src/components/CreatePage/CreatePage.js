@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { RecipeContext } from "../../contexts/RecipeContext";
 // import { useContext } from "react";
 // import { Navigate } from "react-router";
 // import { GlobalContext } from "../../contexts/GlobalContext";
 
-export const CreatePage = ({
-    onCreateRecipe,
-}) => {
+export const CreatePage = () => {
+    const { onCreateRecipe } = useContext(RecipeContext);
     const [createValues, setCreateValues] = useState({
         recipeName: '',
         chef: '',

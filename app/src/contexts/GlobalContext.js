@@ -11,7 +11,7 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({
     children,
 }) => {
-    const [userState, setUserState] = useStorage('user', {});
+    const [userState, setUserState] = useStorage('userData', {});
     const navigate = useNavigate();
 
     // const userService = userServiceFactory(userState.accessToken)

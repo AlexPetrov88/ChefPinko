@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { RecipeContext } from "../../contexts/RecipeContext";
 import * as appService from '../../services/appService';
 // import { GlobalContext } from "../../contexts/GlobalContext";
 // import { useContext } from "react";
@@ -24,9 +25,8 @@ import * as appService from '../../services/appService';
 //             });
 //     }, [gameId]);
 
-export const EditPage = ({
-        onEditRecipe,
-}) => {
+export const EditPage = () => {
+    const { onEditRecipe } = useContext(RecipeContext);
     const { detailsId } = useParams();
     
     const [currentValue, setCurrentVAlue] = useState({

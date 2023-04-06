@@ -20,6 +20,9 @@ footer .flexCont {
     align-items: center;
     gap: 6px;
 }
+.clear {
+    list-style: none;
+}
 
 .features {
     padding: 18px;

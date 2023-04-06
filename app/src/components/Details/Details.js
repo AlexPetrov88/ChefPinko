@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useContext } from 'react'; 
 import { GlobalContext } from '../../contexts/GlobalContext';
@@ -8,10 +8,10 @@ import * as appService from "../../services/appService";
 
 import { AddComment } from './AddComment/AddComment';
 import { reducer } from '../../reducer/reducer';
+import { RecipeContext } from "../../contexts/RecipeContext";
 
-export const Details = ({
-    onDeleteRecipe,
-}) => {
+export const Details = () => {
+    const { onDeleteRecipe } = useContext(RecipeContext);
     const { detailsId } = useParams();
     const { userId, isAuthenticated, userEmail } = useContext(GlobalContext);
     // const [ recipeData, setRecipeData ] = useState({});
@@ -81,11 +81,9 @@ export const Details = ({
                     <h2>Comments:</h2>
                     <ul role="list">
                         {recipe.comments && recipe.comments.map(x => (
-                    <>
                             <li key={x._id} className="comment" >
                                 <p>{x.author.email}: {x.comment}</p>
                             </li>
-                    </>
                         ))}
                     </ul>
 
