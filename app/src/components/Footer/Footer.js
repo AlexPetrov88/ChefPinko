@@ -13,7 +13,7 @@ export const Footer = () => {
             <section className={styles["features"]}>
                 <ul className={styles["list"]} role="list">
                     <li className={styles["item"]}><Link className="link" to="/">Home</Link></li>
-                    <li className={styles["item"]}><Link className="link" to="/about us">About us</Link></li>
+                    <li className={styles["item"]}><Link className="link" to="/aboutUs">About us</Link></li>
                 </ul>
             </section>
 

@@ -14,9 +14,9 @@ export const Catalog = () => {
 
             <form id={styles["search"]} >
                 <div className={styles["searchContainer"]}>
-                    <label htmlFor="leg-title">Recipes:</label>
-                    <i className="fas fa-search"></i>
-                    <input type="search" id="searchRecipe" name="search" placeholder="Search for food recipes" />
+                    <label htmlFor="leg-title">Recipes</label>
+                    {/* <i className="fas fa-search"></i>
+                    <input type="search" id="searchRecipe" name="search" placeholder="Search for food recipes" /> */}
                     <Link to={`/createPage`}className="link"><button className="btn">CreateNewRecipe</button></Link>
                 </div>
             </form>

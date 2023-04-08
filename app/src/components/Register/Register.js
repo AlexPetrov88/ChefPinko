@@ -3,10 +3,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import { GlobalContext } from '../../contexts/GlobalContext.js';
 import { useForm } from '../../hooks/useForm.js';
 
-import * as recipesServece from '../../services/appService.js';
+// import * as recipesServece from '../../services/appService.js';
+
+import styles from "./Register.module.css"
 
 export const Register = () => {
-        const { onRegisterSubmit } = useContext(GlobalContext);
+        const { onRegisterSubmit, showModal, setShowModal, errorText, } = useContext(GlobalContext);
         const { formValues, onChangeHandler, onSubmit } = useForm({
             email: '',
             password: '',
@@ -49,7 +51,24 @@ export const Register = () => {
     //     }
     // }
 
-    return( 
+    const onModalClick = () => {
+        setShowModal(!showModal);
+    }
+
+    return(
+    <>
+        {showModal && 
+        <>
+            <div className={styles["modal"]}>
+            <div className={styles["modal-content"]}>
+                <h2>{errorText}</h2>
+                <button className="btn" onClick={onModalClick}>OK</button>
+            </div>
+            </div>    
+    
+            <div className={styles["bgOpacity"]}></div>
+        </>
+        }
         <section id="register-page" className="content auth">
             <form id="register" onSubmit={onSubmit}>
                 <div className="container">
@@ -72,6 +91,7 @@ export const Register = () => {
                 </div>
             </form>
         </section>
+    </>
     );
 }
 

@@ -13,35 +13,44 @@ export const GlobalProvider = ({
 }) => {
     const [userState, setUserState] = useStorage('userData', {});
     const navigate = useNavigate();
-
+    const [showModal, setShowModal] = useState(false);
+    const [errorText, setErrorText] = useState();
     // const userService = userServiceFactory(userState.accessToken)
 
      // LOGIN
      const onLoginSubmit = async (data) => {
         if (data.email === '' || data.password === '') {
-            alert('All fealds are required!');
+            setShowModal(true);
+            setErrorText('All fealds are required!')
             return;
+        } else {
+
+            try {
+                const result = await appService.login(data.email, data.password);
+            
+                setUserState(result);
+            
+                navigate('/catalog');
+                return;
+            } catch (error) {
+                setShowModal(true);
+                setErrorText(error.message);
+            }
         }
-    try {
-        const result = await appService.login(data.email, data.password);
     
-        setUserState(result);
-    
-        navigate('/catalog');
-    } catch (error) {
-        alert(`error: ${error}`);
-    }
     };
 
     // REGISTER
     const onRegisterSubmit = async (data) => {
         if (data.email === '' || data.password === '') {
-            alert('All fealds are required!');
+            setShowModal(true);
+            setErrorText('All fealds are required!')
             return;
         } 
         
         if (data.password !== data['confirm-password']) {
-            alert('Password don\'t match');
+            setShowModal(true);
+            setErrorText('Password don\'t match')
             return;
         }
     
@@ -51,8 +60,10 @@ export const GlobalProvider = ({
                 setUserState(result);
 
                 navigate('/catalog');
+                return;
             } catch (error) {
-                alert(`error: ${error}`);
+                setShowModal(true);
+                setErrorText(error.message);
             }
             
         };  
@@ -72,6 +83,9 @@ export const GlobalProvider = ({
         token: userState.token,
         userEmail: userState.email,
         isAuthenticated: !!userState.token,
+        showModal,
+        setShowModal,
+        errorText,
     };
  
 

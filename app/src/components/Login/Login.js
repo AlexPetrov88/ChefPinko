@@ -1,15 +1,17 @@
-import { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom"
+// import { useState } from 'react';
+import { Link} from "react-router-dom"
 
 import { GlobalContext } from '../../contexts/GlobalContext.js';
 import { useContext } from 'react';
 
 import { useForm } from '../../hooks/useForm.js';
 
-import * as appService from '../../services/appService.js'
+import styles from './Login.module.css';
+
+// import * as appService from '../../services/appService.js'
 
 export const Login = () => {
-    const { onLoginSubmit } = useContext(GlobalContext);
+    const { onLoginSubmit, showModal, setShowModal, errorText, } = useContext(GlobalContext);
     const { formValues, onChangeHandler, onSubmit } = useForm({
         email: '',
         password: '',
@@ -41,10 +43,28 @@ export const Login = () => {
     //     await onLoginAccount(userData);
     //     navigate('/')
     // }
-
+    const onModalClick = () => {
+        setShowModal(!showModal);
+    }
 
     return(
-    <section id="login-page" className="auth">
+    <>
+        {showModal && 
+        <>
+            <div className={styles["modal"]}>
+            <div className={styles["modal-content"]}>
+                <h2>{errorText}</h2>
+                <button className="btn" onClick={onModalClick}>OK</button>
+            </div>
+            </div>    
+    
+            <div className={styles["bgOpacity"]}></div>
+        </>
+        }
+        
+        <section id="login-page" className="auth" >
+            
+
             <form id="login" method='post' onSubmit={onSubmit}>
 
                 <div className="container">
@@ -61,6 +81,7 @@ export const Login = () => {
                 </div>
             </form>
         </section>
+    </>    
     );
 }
 

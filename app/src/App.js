@@ -2,6 +2,7 @@ import { Routes, Route} from "react-router-dom";
 
 import { GlobalProvider } from './contexts/GlobalContext';
 import { RecipeProvider } from './contexts/RecipeContext';
+import { ClassProvider } from './contexts/ClassContext';
 
 
 import { AboutUs } from "./components/AboutUs/AboutUs"
@@ -16,7 +17,15 @@ import { Register } from "./components/Register/Register";
 import { Footer } from "./components/Footer/Footer";
 import { Logout } from "./components/Logout/Logout";
 import { RouteGuard } from "./components/Guards/RouteGuard";
-import { GameOwner } from "./components/Guards/OwnerGuard";
+import { RecipeOwner } from "./components/Guards/OwnerGuard";
+import { Classes } from "./components/Classes/Classes";
+import { DetailsClass } from "./components/DetailsClass/DetailsClass";
+import { ShopAndGadjets } from "./components/ShopAndGadjets/ShopAndGadjets";
+import { EditClassPage } from "./components/EditClassPage/EditClassPage";
+import { CreateClassPage } from "./components/CreateClassPage/CreateClassPage";
+// import { ShoppingBasket } from "./components/ShoppingBasket/ShoppingBasket";
+import { BasketProvider } from "./contexts/BasketContext";
+import { CreateShopGadjet } from "./components/CreateShopGadjet/CreateShopGadjet";
 
 function App() {
   
@@ -24,6 +33,8 @@ function App() {
   return (
       <GlobalProvider>
         <RecipeProvider>
+          <ClassProvider>
+            <BasketProvider>
           <div id="box">
               <Header />
 
@@ -32,17 +43,35 @@ function App() {
                       <Route path='/' element={<Home />} /> 
                       <Route path='/login' element={<Login />} /> 
                       <Route path='/register' element={<Register />} /> 
+
                       <Route path='/aboutUs' element={<AboutUs />} /> 
+
+                      {/* <Route path='/shoppingBasket' element={<ShoppingBasket />} />  */}
+
                       <Route path='/catalog' element={<Catalog />} /> 
                       <Route path='/catalog/:detailsId' element={ <Details />} /> 
+                      <Route path='/classes' element={<Classes />} /> 
+                      <Route path='/classes/:detailsId' element={ <DetailsClass />} /> 
+                      <Route path='/tools' element={<ShopAndGadjets />} />
+                      
                       
                       <Route element={<RouteGuard />}>
                       <Route path='/catalog/:detailsId/editPage' element={
-                          <GameOwner>
+                          <RecipeOwner>
                                <EditPage />
-                          </GameOwner>
+                          </RecipeOwner>
                           } /> 
                           <Route path='/createPage' element={<CreatePage />} /> 
+                          
+                          <Route path='/classes/:detailsId/editClassPage' element={
+                            <RecipeOwner>
+                               <EditClassPage />
+                          </RecipeOwner>
+                          } /> 
+                          <Route path='/createClassPage' element={<CreateClassPage />} /> 
+
+                          <Route path='/createShopGadjet' element={<CreateShopGadjet />} /> 
+
                           <Route path='/logout' element={<Logout />} /> 
                       </Route>
                   </Routes>
@@ -50,6 +79,8 @@ function App() {
 
               <Footer /> 
           </div>
+            </BasketProvider>
+          </ClassProvider>
         </RecipeProvider>
       </GlobalProvider>
   );

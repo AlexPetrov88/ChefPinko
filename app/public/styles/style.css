@@ -44,6 +44,14 @@ body {
     cursor: pointer;
 }
 
+.red {
+    border-color: red;
+}
+
+.green {
+    border-color: green;
+}
+
 
 /* NAVIGATION */
 .btn {
@@ -61,21 +69,6 @@ body {
     background-color: rgb(197, 37, 91);
     cursor: pointer;
 }
-
-
-/* Home */
-
-
-
-
-
-
-/* RECIPES CARDS */
-
-
-
-
-
 
 
 /* DETAILS */
@@ -164,6 +157,7 @@ li.comment {
     padding: 40px;
     box-sizing: border-box;
     background: rgb(231, 231, 231);
+    z-index: 0;
 }
 
 #register-page {
@@ -334,6 +328,4 @@ textarea {
 
 
 
-
-/* FOOTER */
 

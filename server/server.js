@@ -1391,7 +1391,80 @@
         },
         comments: {
         
-        }
+        },
+        classes: {
+            "111111f5-3277-42ad-b874-76d043b069cb": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Knife Sharpening",
+                "imageUrl": "/images/Sharpening.png",
+                "video": "https://www.youtube.com/watch?v=2fOtug1CXxc",
+                "summary": "Putting this project together, we noticed that the French come up a lot in the recipes that make up our ultimate burger. The Gallic love for mayonnaise goes without saying, and though Beef Demi-Glace isn’t considered a mother sauce in France, it’s certainly fundamental to French cuisine. The skills that go into crafting our Brioche Burger Buns recipe are rumored to be a birthright dans l’Hexagone France, it’s certainly fundamental to French cuisine. The skills that go into crafting our Brioche Burger Buns recipe are rumored to be a birthright dans l’Hexagone.",
+                "_createdOn": 1117194111111,
+            },
+            "222222f5-3277-42za-b874-76d043b069fr": {
+                "_ownerId": "888ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "What Is Sous Vide?",
+                "imageUrl": "/images/SousVide.png",
+                "video": "https://www.youtube.com/watch?v=LuG7zrU-Uw0",
+                "summary": "Putting this project together, we noticed that the French come up a lot in the recipes that make up our ultimate burger. The Gallic love for mayonnaise goes without saying, and though Beef Demi-Glace isn’t considered a mother sauce in France, it’s certainly fundamental to French cuisine. The skills that go into crafting our Brioche Burger Buns recipe are rumored to be a birthright dans l’Hexagone France, it’s certainly fundamental to French cuisine. The skills that go into crafting our Brioche Burger Buns recipe are rumored to be a birthright dans l’Hexagone.",
+                "_createdOn": 1617194222222,
+            },
+            "333333f5-3277-42ad-b874-76d043b069cb": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "Class Espresso Theory",
+                "imageUrl": "/images/Coffee.png",
+                "video": "https://www.youtube.com/watch?v=Jjfxr24iuuw",
+                "summary": "Putting this project together, we noticed that the French come up a lot in the recipes that make up our ultimate burger. The Gallic love for mayonnaise goes without saying, and though Beef Demi-Glace isn’t considered a mother sauce in France, it’s certainly fundamental to French cuisine. The skills that go into crafting our Brioche Burger Buns recipe are rumored to be a birthright dans l’Hexagone France, it’s certainly fundamental to French cuisine. The skills that go into crafting our Brioche Burger Buns recipe are rumored to be a birthright dans l’Hexagone.",
+                "_createdOn": 1117194333333,
+            }
+        },
+        tools: {
+            "777777f5-3277-42ad-b874-76d043b069cb": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Knives",
+                "imageUrl": "/images/Knives.png",
+                "price": 10,
+                "_createdOn": 1117194111111,
+            },
+            "888888f5-3277-42za-b874-76d043b069fr": {
+                "_ownerId": "888ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "Set Knives",
+                "imageUrl": "/images/setKnives.png",
+                "price": 10,
+                "_createdOn": 1617194222222,
+            },
+            "999999f5-3277-42ad-b874-76d043b069cb": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "Knife",
+                "imageUrl": "/images/Knife.png",
+                "price": 10,
+                "_createdOn": 1117194333333,
+            },
+            "177777f5-3277-42ad-b874-76d043b069cb": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Zest",
+                "imageUrl": "/images/Zest.png",
+                "price": 10,
+                "_createdOn": 1117194111112,
+            },
+            "188888f5-3277-42za-b874-76d043b069fr": {
+                "_ownerId": "888ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "Burner",
+                "imageUrl": "/images/Fire.png",
+                "price": 10,
+                "_createdOn": 1617194222221,
+            },
+            "199999f5-3277-42ad-b874-76d043b069cb": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "KnifeRings",
+                "imageUrl": "/images/Rings.png",
+                "price": 10,
+                "_createdOn": 1117194333331,
+            }
+        },
+        likes: {
+        
+        },
     };
     var rules$1 = {
         users: {

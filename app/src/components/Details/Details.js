@@ -73,9 +73,6 @@ export const Details = () => {
                         <Link to={`/catalog/${detailsId}/editPage`} className="link" ><button className="btn">Edit</button></Link>
                         </>
                     )}
-                    {isAuthenticated && (
-                        <button className="btn">Rating</button>
-                    )}
                 </div>
                 <div className="details-comments">
                     <h2>Comments:</h2>

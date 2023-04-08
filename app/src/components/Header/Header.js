@@ -17,7 +17,7 @@ export const Header = () => {
                 <li className={styles["item"]}><Link className="link" to="/">Home</Link></li>
                 <li className={styles["item"]}><Link className="link" to="/aboutUs">About us</Link></li>
                 <li className={styles["item"]}><Link className="link" to="/catalog">Recipes</Link></li>
-                <li className={styles["item"]}><Link className="link" to="/tools">Guides and Tools</Link></li>
+                <li className={styles["item"]}><Link className="link" to="/tools">Shop</Link></li>
                 <li className={styles["item"]}><Link className="link" to="/classes">Classes</Link></li>
                 {isAuthenticated && (
                     <div>

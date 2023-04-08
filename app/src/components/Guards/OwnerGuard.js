@@ -4,7 +4,7 @@ import { GlobalContext } from '../../contexts/GlobalContext';
 
 import { RecipeContext } from '../../contexts/RecipeContext';
 
-export const GameOwner = ({
+export const RecipeOwner = ({
     children,
 }) => {
     const { detailsId } = useParams();
